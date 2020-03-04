@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Ajax</title>
+
+        <script>
+            //use $ google-chrome --disable-web-security --user-data-dir="/tmp/" 
+            var xhr= new XMLHttpRequest();
+            xhr.open("GET", 'http://localhost:8080/api/tutorial/1.0/employees', true);
+            xhr.onload = function(){
+                document.getElementById('risposta').innerHTML= xhr.response;
+            };
+            xhr.onerror = function(){
+                alert('Errore');
+            };
+            xhr.send();
+        </script>
+    </head>
+    <body>
+        <h1>Pagina richiesta ajax</h1>
+        <p>Risposta:</p>
+        <div id="risposta"></div>
+    </body>
+</html>
